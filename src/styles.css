@@ -23,20 +23,16 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
-
 }
 
 .navbar {
     display: flex;
-    position: fixed;
-    justify-content: flex-start;
+    position: sticky;
+    justify-content: space-around;
     top: 0%;
-    width: 100%;
     align-items: center;
     flex-flow: row wrap;
-    
     padding: 16px;
-    align-items: center;
     background-color: var(--secondary);
     box-shadow: 0 1px;
 }
@@ -60,7 +56,7 @@ body {
 
 .content {
     width: 100%;
-    margin-top: 150px;
+    margin-top: 50px;
 
     img {
         border-radius: 0.5rem;
@@ -75,33 +71,28 @@ h1 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     padding: 10px;
+    justify-items: center;
 }
 
 .grid-item {
-    width: 100%;
-    padding: 10px;
-}
-
-.item-content {
     display: flex;
     flex-direction: column;
     align-items: strecth;
+    padding: 10px;
 }
 
 .grid-item img {
-    max-width: 100%;
     height: auto;
 }
 
 .product-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    
+    align-items: center;    
 }
 
 .footer {
@@ -113,7 +104,6 @@ h1 {
     padding: var(--size);
     text-align: center;
 }
-
 
 .footer-img {       
     display: inline-block;
@@ -133,24 +123,27 @@ h1 {
 
 
 .footer-item {
-    flex: 1 0 200px;
-    border-bottom: 1px solid var(--secondary);
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
 } 
-        
-      
-}
 
 @media (max-width: 768px) {
-    .navbar {
-      justify-content: center;
-    }
-    .navbar div:not(:first-child),
-    .navbar div:not(:last-child) {
+    .opciones {
         display: none;
     }
-  
+
+    .iconoMenu {
+        margin: 0 auto
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .footer {
       flex-direction: column;
       align-items: flex-start;
